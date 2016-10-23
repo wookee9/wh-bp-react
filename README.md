@@ -1,6 +1,6 @@
 # React Sass Boilerplate
 
-A simple (but opinionated) React boilerplate, Sass and Webpack batteries included.
+A simple set of (opinionated) React boilerplates for different kinds of projects. Batteries included.
 
 
 ## Quickstart
