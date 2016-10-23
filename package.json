@@ -1,0 +1,41 @@
+{
+  "name": "wh-bp-react",
+  "version": "1.0.0",
+  "description": "Basic React boilerplate with Sass",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
+  },
+  "devDependencies": {
+    "add-asset-html-webpack-plugin": "^1.0.2",
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-react-html-attrs": "^2.0.0",
+    "babel-plugin-transform-class-properties": "^6.3.13",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-stage-0": "^6.3.13",
+    "css-loader": "^0.25.0",
+    "html-webpack-plugin": "^2.22.0",
+    "node-sass": "^3.10.1",
+    "postcss-loader": "^1.0.0",
+    "sass-loader": "^4.0.2",
+    "script-loader": "^0.7.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "scripts": {
+    "build-production": "npm run clean && NODE_ENV=production ./node_modules/.bin/webpack -p",
+    "build-dev": "npm run clean && npm run dll && NODE_ENV=dev ./node_modules/.bin/webpack",
+    "dev-server": "NODE_ENV=dev ./node_modules/.bin/webpack-dev-server --content-base app/dist/ --inline --hot",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf app/dist && rm -f ./*.dll.manifest.json",
+    "dll": "NODE_ENV=dll webpack --config=webpack.dll.config.js"
+  },
+  "author": "WH",
+  "license": "MIT"
+}
