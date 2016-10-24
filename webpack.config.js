@@ -5,6 +5,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
 var autoprefixer = require('autoprefixer');
 
+
 module.exports = {
   context: path.join(__dirname, "app"),
   devtool: debug ? 'inline-sourcemap' : 'source-map',
@@ -30,7 +31,12 @@ module.exports = {
       {
         test: /\.scss$/,
         //loaders: ["style", debug ? "raw" : "css", "sass", "postcss-loader"]
-        loader: "css!postcss!sass"
+        loaders: [
+          'style-loader',
+          'css-loader',
+          'postcss-loader',
+          'sass-loader'
+        ]
       },
       {
         test: /\.png$/,
@@ -62,9 +68,11 @@ module.exports = {
     root : __dirname,
     alias : {
       Stylesheets : 'app/src/css/styles.scss',
+      Bootstrap : 'node_modules/bootstrap/scss/bootstrap.scss',
+      BootstrapCustom : 'app/src/css/bootstrap-custom.scss',
       Container : 'app/src/js/containers/Container.jsx',
-      Component1 : 'app/src/js/components/Component1.jsx',
-      Component2 : 'app/src/js/components/Component2.jsx'
+      Navigation : 'app/src/js/components/Navigation.jsx',
+      Content : 'app/src/js/components/Content.jsx'
     }
   },
   output: {
@@ -73,7 +81,9 @@ module.exports = {
     filename: debug ? "[name].bundle.js" : "[name].bundle.min.js"
   },
   postcss: function () {
-      return [autoprefixer];
+      return [
+        autoprefixer
+      ];
   },
   plugins: debug ? [
     // Development

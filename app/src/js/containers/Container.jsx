@@ -1,6 +1,6 @@
 import React from "react";
-import Component1 from "Component1";
-import Component2 from "Component2";
+import Navigation from "Navigation";
+import Content from "Content";
 
 export default class Container extends React.Component {
   constructor() {
@@ -8,13 +8,10 @@ export default class Container extends React.Component {
   }
 
   render() {
-    var result = Date.now();
-
     return (
       <div>
-        <h1>Container {result}</h1>
-        <Component1/>
-        <Component2/>
+        <Navigation/>
+        <Content/>
       </div>
     );
   }

@@ -20,6 +20,7 @@
     "babel-preset-stage-0": "^6.3.13",
     "bootstrap": "^4.0.0-alpha.5",
     "css-loader": "^0.25.0",
+    "extract-text-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "^2.22.0",
     "node-sass": "^3.10.1",
     "postcss-loader": "^1.0.0",
