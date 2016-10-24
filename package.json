@@ -37,5 +37,9 @@
     "dll": "NODE_ENV=dll webpack --config=webpack.dll.config.js"
   },
   "author": "WH",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/wookee9/wh-bp-react"
+  }
 }
