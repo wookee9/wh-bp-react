@@ -3,5 +3,8 @@
 node_modules
 npm-debug.log
 
+/config/*
+!/config/sample.env
+
 /app/dist/
 *.dll.manifest.json
