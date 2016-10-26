@@ -1,10 +1,225 @@
 /* ---- Scss Layout ---- */
 
+/*
+ * Globals
+ */
+
+/* Links */
+// a,
+// a:focus,
+// a:hover {
+//   color: #fff;
+// }
+
+
+
+/*
+ * Base structure
+ */
+
+html,
 body {
-  padding-top: 5rem;
+  // height: 100%;
+  // background-color: #333;
+}
+body {
+  // color: #fff;
+  text-align: center;
+  // text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
 }
 
-.starter-template {
-  padding: 3rem 1.5rem;
-  text-align: center;
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+// .site-wrapper {
+//   display: flex;
+//   width: 100%;
+//   height: 100vh;
+//   //height: 100%; /* For at least Firefox */
+//   //min-height: 100%;
+//   // -webkit-box-shadow: inset 0 0 5rem rgba(0,0,0,.5);
+//   //         box-shadow: inset 0 0 5rem rgba(0,0,0,.5);
+// }
+// .site-wrapper-inner {
+//   // display: table-cell;
+//   // vertical-align: top;
+// }
+// .cover-container {
+//   margin-right: auto;
+//   margin-left: auto;
+// }
+
+/* Padding for spacing */
+// .inner {
+//   padding: 2rem;
+// }
+
+
+/*
+ * Header
+ */
+
+.masthead {
+  // margin-bottom: 2rem;
+  //background: beige;
+}
+
+.masthead-brand {
+  margin-bottom: 0;
+}
+
+.nav-masthead .nav-link {
+  // padding: .25rem 0;
+  // font-weight: bold;
+  // color: rgba(255,255,255,.5);
+  // background-color: transparent;
+  // border-bottom: .25rem solid transparent;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  // border-bottom-color: rgba(255,255,255,.25);
+}
+
+.nav-masthead .nav-link {
+  // margin-left: 1rem;
+}
+
+.nav-masthead .active {
+  // color: #ffffff;
+  // border-bottom-color: #ffffff;
+}
+
+
+// Mid desktop
+// @media (min-width: 48em) {
+//   .masthead-brand {
+//     float: left;
+//   }
+//   .nav-masthead {
+//     float: right;
+//   }
+// }
+
+
+/*
+ * Cover
+ */
+ .navbar {
+  //  position:
+ }
+
+.cover {
+  //background: pink;
+  padding: 0 1.5rem;
+  width: 100%;
+  min-height: 100vh;
+
+  h1 {
+    // margin: 2rem;
+    padding-top: 2.5rem;
+  }
+
+  p {
+    margin: 2rem;
+  }
+}
+
+// .cover {
+//   padding: 0 1.5rem;
+// }
+
+
+
+/*
+ * Footer
+ */
+
+// .mastfoot {
+//   // color: rgba(255,255,255,.5);
+//   background: lightgray;
+// }
+
+
+
+/*
+ * Affix and center
+ */
+
+// @media (min-width: 40em) {
+//   /* Pull out the header and footer */
+//   .masthead {
+//     // position: fixed;
+//     //top: 0;
+//   }
+//   .mastfoot {
+//     // position: fixed;
+//     //bottom: 0;
+//   }
+//   /* Start the vertical centering */
+//   // .site-wrapper-inner {
+//   //   vertical-align: middle;
+//   // }
+//   /* Handle the widths */
+//   // .masthead,
+//   // .mastfoot,
+//   // .cover-container {
+//   //   width: 100%; /* Must be percentage or pixels for horizontal alignment */
+//   // }
+// }
+
+// @media (min-width: 62em) {
+//   // .masthead,
+//   // .mastfoot,
+//   // .cover-container {
+//   //   width: 42rem;
+//   // }
+// }
+
+// Extra small devices (portrait phones, less than 544px)
+// No media query since this is the default in Bootstrap
+@include media-breakpoint-up(xs) {
+
+}
+// Small devices (landscape phones, 544px and up)
+@include media-breakpoint-up(sm) {
+  // .masthead {
+  //   height: 2rem;
+  // }
+  //
+  // .masthead-brand {
+  //   float: left;
+  // }
+  // .nav-masthead {
+  //   float: right;
+  // }
+  .navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .cover {
+    //position: absolute;
+    //top: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    p {
+      margin: 1rem 10%;
+    }
+  }
+}
+// Medium devices (tablets, 768px and up)
+@include media-breakpoint-up(md) {
+
+}
+// Large devices (desktops, 992px and up)
+@include media-breakpoint-up(lg) {
+
+}
+// Extra large devices (large desktops, 1200px and up)
+@include media-breakpoint-up(xl) {
+
 }

@@ -68,11 +68,10 @@ module.exports = {
     root : __dirname,
     alias : {
       Stylesheets : 'app/src/css/styles.scss',
-      Bootstrap : 'node_modules/bootstrap/scss/bootstrap.scss',
-      BootstrapCustom : 'app/src/css/bootstrap-custom.scss',
+      Bootstrap : 'node_modules/bootstrap/scss',
       Container : 'app/src/js/containers/Container.jsx',
       Navigation : 'app/src/js/components/Navigation.jsx',
-      Content : 'app/src/js/components/Content.jsx'
+      Cover : 'app/src/js/components/Cover.jsx'
     }
   },
   output: {

@@ -1,6 +1,6 @@
 import React from "react";
 import Navigation from "Navigation";
-import Content from "Content";
+import Cover from "Cover";
 
 export default class Container extends React.Component {
   constructor() {
@@ -11,7 +11,7 @@ export default class Container extends React.Component {
     return (
       <div>
         <Navigation/>
-        <Content/>
+        <Cover/>
       </div>
     );
   }

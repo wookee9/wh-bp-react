@@ -1,0 +1,56 @@
+/*
+
+Comment out the modules that you don't need
+to decrease the library weight
+
+Based on Bootstrap v4.0.0-alpha.5
+
+*/
+
+// Core variables and mixins
+@import "bootstrap-variables"; // your custom variable overrides
+@import "~Bootstrap/variables";
+@import "~Bootstrap/mixins";
+
+// Reset and dependencies
+@import "~Bootstrap/normalize";
+//@import "~Bootstrap/print";
+
+// Core CSS
+@import "~Bootstrap/reboot";
+@import "~Bootstrap/type";
+//@import "~Bootstrap/images";
+//@import "~Bootstrap/code";
+@import "~Bootstrap/grid";
+//@import "~Bootstrap/tables";
+//@import "~Bootstrap/forms";
+@import "~Bootstrap/buttons";
+
+// Components
+//@import "~Bootstrap/animation";
+//@import "~Bootstrap/dropdown";
+@import "~Bootstrap/button-group";
+//@import "~Bootstrap/input-group";
+//@import "~Bootstrap/custom-forms";
+@import "~Bootstrap/nav";
+@import "~Bootstrap/navbar";
+//@import "~Bootstrap/card";
+//@import "~Bootstrap/breadcrumb";
+//@import "~Bootstrap/pagination";
+//@import "~Bootstrap/tags";
+//@import "~Bootstrap/jumbotron";
+//@import "~Bootstrap/alert";
+//@import "~Bootstrap/progress";
+//@import "~Bootstrap/media";
+//@import "~Bootstrap/list-group";
+//@import "~Bootstrap/responsive-embed";
+//@import "~Bootstrap/close";
+
+// Components w/ JavaScript
+// @import "~Bootstrap/modal";
+// @import "~Bootstrap/tooltip";
+// @import "~Bootstrap/popover";
+// @import "~Bootstrap/carousel";
+
+// Utility classes
+@import "~Bootstrap/utilities";

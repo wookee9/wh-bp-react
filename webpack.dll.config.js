@@ -1,3 +1,4 @@
+var debug = process.env.NODE_ENV !== "production";
 var webpack = require('webpack')
 // grab dependencies from package.json, and create entries for each
 var pj = require('./package.json')
@@ -15,7 +16,12 @@ module.exports = {
     path: 'app/dist/',
     library: '[name]_lib'
   },
-  plugins: [
+  plugins: debug ? [
+    new webpack.DllPlugin({
+      path: '[name].dll.manifest.json',
+      name: '[name]_lib'
+    })
+  ]: [
     new webpack.DllPlugin({
       path: '[name].dll.manifest.json',
       name: '[name]_lib'
@@ -27,5 +33,5 @@ module.exports = {
         warnings: false
       }
     })
-  ],
+  ]
 }

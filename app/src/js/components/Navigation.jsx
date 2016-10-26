@@ -1,25 +1,19 @@
 import React from "react";
 
-export default class Component1 extends React.Component {
+export default class Navigation extends React.Component {
   constructor() {
     super();
   }
 
   render() {
     return (
-      <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
-        <a class="navbar-brand" href="#">Project name</a>
-        <ul class="nav navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
-        </ul>
+      <nav class="navbar navbar-full navbar-dark bg-inverse">
+        <a class="navbar-brand" href="#">Logo</a>
+        <div class="nav navbar-nav float-xs-right">
+          <a class="nav-item nav-link active" href="#">Page1</a>
+          <a class="nav-item nav-link" href="#">Page2</a>
+          <a class="nav-item nav-link" href="#">Page3</a>
+        </div>
       </nav>
     );
   }
