@@ -71,7 +71,10 @@ module.exports = {
       Bootstrap : 'node_modules/bootstrap/scss',
       Container : 'app/src/js/containers/Container.jsx',
       Navigation : 'app/src/js/components/Navigation.jsx',
-      Cover : 'app/src/js/components/Cover.jsx'
+      Cover : 'app/src/js/components/Cover.jsx',
+      PageA : 'app/src/js/components/PageA.jsx',
+      PageB : 'app/src/js/components/PageB.jsx',
+      PageC : 'app/src/js/components/PageC.jsx'
     }
   },
   output: {

@@ -107,11 +107,11 @@ body {
   //  position:
  }
 
-.cover {
+.page {
   //background: pink;
   padding: 0 1.5rem;
   width: 100%;
-  min-height: 100vh;
+  // min-height: 100vh;
 
   h1 {
     // margin: 2rem;
@@ -192,8 +192,8 @@ body {
   //   float: right;
   // }
   .navbar {
-    position: absolute;
-    top: 0;
+    //position: absolute;
+    //top: 0;
     width: 100%;
     z-index: 1;
   }

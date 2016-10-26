@@ -1,4 +1,5 @@
 import React from "react";
+import {Link, IndexLink} from 'react-router';
 
 export default class Navigation extends React.Component {
   constructor() {
@@ -8,11 +9,11 @@ export default class Navigation extends React.Component {
   render() {
     return (
       <nav class="navbar navbar-full navbar-dark bg-inverse">
-        <a class="navbar-brand" href="#">Logo</a>
+        <IndexLink to="/" class="navbar-brand">Logo</IndexLink>
         <div class="nav navbar-nav float-xs-right">
-          <a class="nav-item nav-link active" href="#">Page1</a>
-          <a class="nav-item nav-link" href="#">Page2</a>
-          <a class="nav-item nav-link" href="#">Page3</a>
+          {/*<a class="nav-item nav-link active" href="#">PageA</a>*/}
+          <Link to="/pageb" class="nav-item nav-link" activeClassName="active">PageB</Link>
+          <Link to="/pagec" class="nav-item nav-link" activeClassName="active">PageC</Link>
         </div>
       </nav>
     );
