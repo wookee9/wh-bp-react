@@ -8,3 +8,6 @@ npm-debug.log
 
 /app/dist/
 *.dll.manifest.json
+
+firebase.json
+.firebaserc

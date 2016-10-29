@@ -1,10 +1,17 @@
-var debug = process.env.NODE_ENV !== "production";
 var webpack = require('webpack');
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
 var autoprefixer = require('autoprefixer');
+var envFile = require('node-env-file');
 
+var debug = process.env.NODE_ENV !== "production";
+
+try {
+  envFile(path.join(__dirname, 'config/' + process.env.NODE_ENV + '.env'))
+} catch (e){
+  console.log('error loading env file', e);
+}
 
 module.exports = {
   context: path.join(__dirname, "app"),
@@ -17,7 +24,10 @@ module.exports = {
       {
         //test: /\.jsx?$/,
         test: /\.(js|jsx)$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: [
+          /(node_modules|bower_components)/,
+          path.resolve(__dirname, 'firebase.json')
+        ],
         include: [
           __dirname
         ],
@@ -61,6 +71,10 @@ module.exports = {
       {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'url?limit=10000&mimetype=image/svg+xml'
+      },
+      {
+        test: /firebase.json|.firebaserc/,
+        loader: 'ignore-loader'
       }
     ]
   },
@@ -74,7 +88,9 @@ module.exports = {
       Cover : 'app/src/js/components/Cover.jsx',
       PageA : 'app/src/js/components/PageA.jsx',
       PageB : 'app/src/js/components/PageB.jsx',
-      PageC : 'app/src/js/components/PageC.jsx'
+      PageC : 'app/src/js/components/PageC.jsx',
+      Components : 'app/src/js/components',
+      JS : 'app/src/js'
     }
   },
   output: {
@@ -106,12 +122,25 @@ module.exports = {
     new AddAssetHtmlPlugin({
       filepath: require.resolve('./app/dist/vendor.bundle.js'),
       includeSourcemap: false
+    }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+        'API_KEY': JSON.stringify(process.env.API_KEY),
+        'AUTH_DOMAIN': JSON.stringify(process.env.AUTH_DOMAIN),
+        'DATABASE_URL': JSON.stringify(process.env.DATABASE_URL),
+        'STORAGE_BUCKET': JSON.stringify(process.env.STORAGE_BUCKET)
+      }
     })
   ] : [
     // Production
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': JSON.stringify('production')
+        'NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+        'API_KEY': JSON.stringify(process.env.API_KEY),
+        'AUTH_DOMAIN': JSON.stringify(process.env.AUTH_DOMAIN),
+        'DATABASE_URL': JSON.stringify(process.env.DATABASE_URL),
+        'STORAGE_BUCKET': JSON.stringify(process.env.STORAGE_BUCKET)
       }
     }),
     new HtmlWebpackPlugin({

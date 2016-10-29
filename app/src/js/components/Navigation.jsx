@@ -14,6 +14,7 @@ export default class Navigation extends React.Component {
           {/*<a class="nav-item nav-link active" href="#">PageA</a>*/}
           <Link to="/pageb" class="nav-item nav-link" activeClassName="active">PageB</Link>
           <Link to="/pagec" class="nav-item nav-link" activeClassName="active">PageC</Link>
+          <Link to="/" class="nav-item nav-link" activeClassName="active">Login</Link>
         </div>
       </nav>
     );
