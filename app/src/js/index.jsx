@@ -8,19 +8,23 @@ import PageC from "Components/PageC.jsx";
 import Login from "Components/Login.jsx";
 import SignUp from "Components/SignUp.jsx";
 
-import 'JS/firebase/index.jsx';
+//import 'JS/firebase/index.jsx';
+
+import firebase from "app/firebase/";
+
+firebase.auth().onAuthStateChanged((user) => {
+  if (user){
+    hashHistory.push('/PageA');
+  } else {
+    hashHistory.push('/');
+  }
+});
 
 require('Stylesheets');
 
+
 const app = document.getElementById('app');
+
 ReactDOM.render(
-  <Router history={hashHistory}>
-    <Route path="/" component={Container}>
-      <Route path="PageB" component={PageB}/>
-      <Route path="PageC" component={PageC}/>
-      <Route path="PageA" component={PageA}/>
-      <Route path="SignUp" component={SignUp}/>
-      <IndexRoute component={Login}/>
-    </Route>
-  </Router>
+
 , app);
